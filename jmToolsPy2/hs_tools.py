@@ -26,8 +26,8 @@ import matplotlib as mpl
 from IPython import display, core
 from IPython.core.pylabtools import *
 
-def plotEdsSpc(ss, logY=True, crL=22, crR=2):
-  """plotEdsSpc(ss, logY=True, crL=22, crR=2)
+def plotEdsSpc(ss, logY=True, crL=22, crR=2, strUni='eV'):
+  """plotEdsSpc(ss, logY=True, crL=22, crR=2, strUni='eV')
   Plot a sum spectrum or  max pixel from an EDS spectrum image
   
   Parameters
@@ -55,7 +55,7 @@ def plotEdsSpc(ss, logY=True, crL=22, crR=2):
     plt.yscale('log', nonposy='mask')
   else:
     plt.yscale('linear', nonposy='mask')
-  plt.xlabel('keV')
+  plt.xlabel(strUni)
   plt.ylabel('counts')
   plt.title(ss.metadata.General.title)
   
