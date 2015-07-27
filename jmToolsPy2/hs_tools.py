@@ -10,6 +10,7 @@ hs_tools: Convenience functions for working with HyperSpy
 0.2.1  2014-06-11  JRM  Changed makeEdsMaxPxSpc and makeEdsSumSpc to
                         return hs.signals.EDSSEMSpectrum. Added tweaks to
                         plotEdsSpc.
+0.2.2  2015-07-27  JRM  Added strUni to plotEdsSpc
 """
 # -*- coding: utf-8 -*-
 # old
