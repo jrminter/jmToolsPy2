@@ -1,3 +1,4 @@
 build
 dist
 jmToolsPy2.egg-info
+test/.ipynb_checkpoints
