@@ -115,7 +115,10 @@ def makeEdsMaxPxSpc(si, edsEvCh, edsZeOf, npChan=0):
 	3>	d2.getZeroOffset()
 	-94.48424156889702
 	"""
-	spc = si.to_spectrum()
+	if si.metadata.Signal.record_by != 'spectrum':
+		spc = si.to_spectrum()
+	else:
+		spc = si
 	dat = spc.data
 	dat = dat.astype(float)
 	print dat.shape
@@ -166,7 +169,10 @@ def makeEdsSumSpc(si, edsEvCh, edsZeOf, npChan=0):
 	3>	d2.getZeroOffset()
 	-94.48424156889702
 	"""
-	spc = si.to_spectrum()
+	if si.metadata.Signal.record_by != 'spectrum':
+		spc = si.to_spectrum()
+	else:
+		spc = si
 	dat = spc.data
 	dat = dat.astype(float)
 	print dat.shape
