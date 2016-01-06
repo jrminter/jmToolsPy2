@@ -9,6 +9,7 @@ plotting_tools: Convenience functions for plotting images and data
 0.0.935  2015-12-31  JRM  Added plotImageWithHistogram and improved
                           the comments.
 0.0.940  2016-01-06  JRM  Numpy doc string format
+0.0.945  2016-01-06  JRM  More functions
 """
 # -*- coding: utf-8 -*-
 def complexPolarPlot(a, color='#CC0000'):
