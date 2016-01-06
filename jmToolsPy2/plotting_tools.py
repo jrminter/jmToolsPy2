@@ -217,6 +217,7 @@ def plotImage(im, cmap='gray' , figsize=(7,8), bare=True):
     img1 = data.camera()
     plotImage(img1, cmap='viridis', figsize=(5,5), bare=False)
     """
+    from matplotlib import pyplot as plt
     fig = plt.figure(figsize=figsize)
     ax = fig.add_subplot(1, 1, 1)
     ax.imshow(im, cmap=cmap);
