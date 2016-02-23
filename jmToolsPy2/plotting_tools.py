@@ -10,8 +10,48 @@ plotting_tools: Convenience functions for plotting images and data
                           the comments.
 0.0.940  2016-01-06  JRM  Numpy doc string format
 0.0.945  2016-01-06  JRM  More functions
+0.0.950  2016-02-23  JRM  Added showImages
 """
 # -*- coding: utf-8 -*-
+
+def showImages(images,titles=None, cmap='gray', bare=False):
+    """Display a list of images
+
+    Parameters
+    ----------
+    images : [images] (a list of numpy arrays)
+        These are the images to be plotted.
+
+    titles: A list of strings (None)
+        These are the titles corresponding to the images. Default is None
+
+    cmap: a matplotlib color map ('gray').
+        Default is 'gray'. One can use a string or a
+        colormap like plt.cm.gray or plt.cm.viridis.
+
+    bare: Boolean (False)
+        A flag to supress axis numbering
+    """
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    n_ims = len(images)
+    if titles is None: titles = ['(%d)' % i for i in range(1,n_ims + 1)]
+    fig = plt.figure()
+    n = 1
+    for image,title in zip(images,titles):
+        a = fig.add_subplot(1,n_ims,n) # Make subplot
+        # if image.ndim == 2: # Is image grayscale?
+        #     plt.gray() # Only place here where you can't replace 'gray' with 'grey'
+        plt.imshow(image, cmap=cmap)
+        a.set_title(title)
+        if bare:
+            a.xaxis.set_visible(False);
+            a.yaxis.set_visible(False);
+        n += 1
+    fig.set_size_inches(np.array(fig.get_size_inches()) * n_ims)
+    plt.show()
+
 def complexPolarPlot(a, color='#CC0000'):
     r"""Plot a list or vector of complex points as a polar plot.
     Defaults to red points.
