@@ -6,11 +6,7 @@ map_tools: Convenience functions for processing X-Ray EDS maps
 -------  ----------  ---  ------------------------------------------
 0.0.959  2016-03-04  JRM  Add ensureDir and fix_gray_image_to_rgb utils
 0.0.961  2016-03-10  JRM  Add medianFilterMaps
-<<<<<<< HEAD
-0.0.962  2016-03-14  JRM  Add rescaleFilteredMaps
-=======
 0.0.962  2016-03-17  JRM  Add rescaleFilteredMaps
->>>>>>> 9c32167c792d82ef39e1933c4d8fead2ff8b1661
 """
 # -*- coding: utf-8 -*-
 
